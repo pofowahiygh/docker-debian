@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run --rm -it debian8-oz /bin/bash
+docker run --rm -it debian9-oz /bin/bash
