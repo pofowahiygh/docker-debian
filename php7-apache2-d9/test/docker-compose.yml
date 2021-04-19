@@ -1,0 +1,8 @@
+web:
+    image: php7-apache2-d9
+    command: /cmd/start.sh
+    ports:
+        - '10080:80'
+    volumes:
+        - './run:/cmd'
+        - './app:/var/www/html'
