@@ -1,0 +1,24 @@
+web:
+    image: 'nginx-d9'
+#     restart: always
+    command: '/cmd/start-web.sh'
+    links:
+        - 'php'
+    ports:
+        - '80:80'
+    volumes:
+        - './app/laravel:/var/www/laravel'
+        - './cfg/nginx/sites-available:/etc/nginx/sites-available'
+        - './cmd:/cmd'
+
+php:
+    image: 'php7-d9'
+#     restart: always
+    command: '/cmd/start-php.sh'
+    expose:
+        - '9000'
+    volumes:
+        - './app/laravel:/var/www/laravel'
+        - './cfg/php7-fpm/pool.d:/etc/php/7.0/fpm/pool.d'
+        - './cmd:/cmd'
+        

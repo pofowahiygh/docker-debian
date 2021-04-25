@@ -18,7 +18,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN apt-get update && apt-get upgrade -y && \
       apt-get install -y build-essential && \
       apt-get install -y software-properties-common && \
-      apt-get install -y curl git && \
+      apt-get install -y curl git zip unzip && \
       apt-get install -y locales && \
       rm -rf /var/lib/apt/lists/*
 
